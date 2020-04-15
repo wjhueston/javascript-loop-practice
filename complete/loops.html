@@ -130,7 +130,15 @@
         var number = parseInt($("#myNumber").val());
         var output = "";
 
-
+        // Declare a counter for how many times we've looped
+        var count = 1;
+        while (count <= number)
+        {
+            // Append an "X" to the output string
+            output += "X";
+            // Add one to the counter
+            count++;
+        }
 
 
         $("#while-result").text(output);
@@ -144,7 +152,13 @@
         var number = parseInt($("#myNumber").val());
         var sum = 0;
 
-
+        // Same pieces as the while loop, just all on one line
+        for (var count = 1; count <= number; count++)
+        {
+            // The only thing in the loop body is the
+            // code that repeats
+            sum += count;
+        }
 
         $("#for-result").text(sum);
     }
@@ -157,7 +171,14 @@
         var number = parseInt($("#myNumber").val());
         var output = "";
 
-
+        // Create a counter for how many times we've looped
+        var count = 1;
+        do {
+            // Concatenate current value of count to output string
+            output += count;
+            // Add one to count
+            count++;
+        } while (count <= number);
 
 
         $("#do-while-result").text(output);

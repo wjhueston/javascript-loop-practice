@@ -95,10 +95,10 @@
          It should run exactly "num" times.
         */
 
-        // for ()
-        // {
-        //     createImage("for");
-        // }
+       for (var pictureCount1 = 0; pictureCount1 < num; pictureCount1++)
+       {
+           createImage("for");
+       }
 
 
         /*
@@ -106,20 +106,22 @@
          It should run "num + 1" times.
         */
 
-        // var pictureCount2 = 0;
-        // while () {
-        //
-        // }
+       var pictureCount2 = 0;
+       while (pictureCount2 < num + 1) {
+           createImage("while");
+           pictureCount2++;
+       }
 
         /*
          Uncomment and finish this do-while loop.
          It should run "num - 1" times.
         */
 
-        // var pictureCount3 = 0;
-        // do {
-        //
-        // } while ();
+       var pictureCount3 = 0;
+       do {
+           createImage("dowhile");
+           pictureCount3++;
+       } while (pictureCount3 < num - 1);
     }
 
     function createImage(id) {

@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Loop Runner</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            margin: 20px;
+            background-color: darkolivegreen;
+            color: beige;
+        }
+
+        label {
+            display: block;
+        }
+
+        label.error {
+            display: inline;
+            clear: none;
+            color: red;
+            font-size: smaller;
+            margin-left: 5px;
+        }
+
+        fieldset {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+<form id="loopTestForm">
+    <h1>Loop Practice</h1>
+    <p>
+        <label for="valueOfX">Enter an integer > 1</label>
+        <input type="number" name="valueOfX" id="valueOfX" autofocus>
+    </p>
+    <fieldset>
+        <legend>Test Method</legend>
+        <label>
+            <input type="radio" name="loopMethod" value="whileLoop" id="whileLoop" checked>
+            While Loop: Print a character X times</label>
+        <div id="while-result"></div>
+        <br>
+        <label>
+            <input type="radio" name="loopMethod" value="forLoop" id="forLoop">
+            For Loop: Sum of 1 through X</label>
+        <div id="for-result"></div>
+        <br>
+        <label>
+            <input type="radio" name="loopMethod" value="doWhileLoop" id="doWhileLoop">
+            Do-While Loop: Print the numbers 1 through X</label>
+        <div id="do-while-result"></div>
+    </fieldset>
+    <p>
+        <input type="submit" name="submitButton" id="submitButton" value="Run Loop">
+    </p>
+</form>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<!-- jQuery validation -->
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+<!-- My script -->
+<script>
+    $(init);
+
+    function init() {
+        var myRules = {
+            valueOfX:
+                {
+                    required: true,
+                    digits: true,
+                    min: 1,
+                    max: 1000
+                }
+        };
+        var myMessages = {
+            valueOfX:
+                {
+                    required: "Must fill in number",
+                    digits: "Only whole numbers",
+                    min: "Must be 1 - 1000",
+                    max: "Must be 1 - 1000"
+                }
+        };
+        var config = {
+            rules: myRules,
+            messages: myMessages,
+            submitHandler: runLoops
+        };
+
+        $("#loopTestForm").validate(config);
+    }
+
+    function runLoops() {
+        var selectedLoopMethod = $("input[name=loopMethod]").filter(":checked").val();
+
+        /*
+            Depending on which test method was selected,
+            call the appropriate function.
+
+            Possible values of selectedLoopMethod and
+            the corresponding function calls are:
+
+            forLoop	==> runForLoop()
+            whileLoop ==> runWhileLoop()
+            doWhileLoop ==> runDoWhileLoop()
+        */
+        switch (selectedLoopMethod) {
+            case "whileLoop":
+                runWhileLoop();
+                break;
+            case "forLoop":
+                runForLoop();
+                break;
+            case "doWhileLoop":
+                runDoWhileLoop();
+        }
+
+        return false;
+    }
+
+    /*
+        Uses a while loop to print the same character X times.
+        Writes the result to the output div.
+    */
+    function runWhileLoop() {
+        var number = parseInt($("#myNumber").val());
+        var output = "";
+
+
+        $("#while-result").text(output);
+    }
+
+    /*
+        Uses a for loop to sum the numbers 1 through X.
+        Writes the result to the output div.
+    */
+    function runForLoop() {
+        var number = parseInt($("#myNumber").val());
+        var output = "";
+
+
+        $("#for-result").text(output);
+    }
+
+    /*
+        Uses a do-while loop to print the numbers 1 through X.
+        Writes the result to the output div.
+    */
+    function runDoWhileLoop() {
+        var number = parseInt($("#myNumber").val());
+        var output = "";
+
+
+        $("#do-while-result").text(output);
+    }
+
+
+</script>
+
+</body>
+</html>

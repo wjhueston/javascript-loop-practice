@@ -45,24 +45,9 @@ $(document).ready(function () {
          addImageToDiv("#for-loop");
         */
 
-var x = 0;
-
-        while (x < num + 1) {
-            addImageToDiv("#while-loop");
-            x++;
-        }
 
 
-        var y = 0;
-        do {
-            addImageToDiv("#do-while-loop");
-            y++;
-        } while (y < num - 1);
 
-
-        for (var z = 0; z < num; z++) {
-            addImageToDiv("#for-loop");
-        }
 
     }
 

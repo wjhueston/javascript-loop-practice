@@ -26,18 +26,20 @@ $(document).ready(function () {
 });
 
 function runLoops() {
-    var selectedLoopMethod = $("input[name=loop-type]:checked").val();
+    // This variable will contain one of three strings:
+    // "for-loop", "while-loop", or "do-while-loop"
+    var selectedLoop = $("input[name=loop-type]:checked").val();
 
     /*
-        Depending on which test method was selected,
+        Depending on which loop was selected,
         call the appropriate function.
 
-        Possible values of selectedLoopMethod and
+        Possible values of selectedLoop and
         the corresponding function calls are:
 
-        for-loop	  ==> runForLoop()
-        while-loop    ==> runWhileLoop()
-        do-while-loop ==> runDoWhileLoop()
+        "for-loop"	    ==>  runForLoop()
+        "while-loop"    ==>  runWhileLoop()
+        "do-while-loop" ==>  runDoWhileLoop()
     */
 
 
@@ -52,8 +54,11 @@ function runWhileLoop() {
     var output = "";
 
     /*
-        Use a while loop to write the letter A "number" times
-        to the div with ID "while-result".
+        Use a while loop to concatenate the letter A
+        "number" times to the string "output". For example,
+        if "number" is 5, then output should be "AAAAA".
+
+        (Or for a challenge, concatenate the first "number" letters of the alphabet!)
     */
 
 
@@ -66,8 +71,8 @@ function runForLoop() {
     var sum = 0;
 
     /*
-        Use a for loop to sum the numbers 1 through "number".
-        Write the result to the div with ID "for-result".
+        Use a for loop to add the numbers 1 through "number"
+        into the variable "sum".
     */
 
     $("#for-result").text(sum);
@@ -79,8 +84,9 @@ function runDoWhileLoop() {
     var output = "";
 
     /*
-        Use a do-while loop to print the numbers 1 through
-        "number" to the div with ID "do-while-result".
+        Use a do-while loop to concatenate the numbers 1 through
+        "number" to the string "output". For example, if "number"
+        is 5, then output should be "12345".
     */
 
 
